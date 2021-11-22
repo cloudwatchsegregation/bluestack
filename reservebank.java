@@ -1,29 +1,18 @@
-public interface reservebank
-{
- void money();
-}
-interface Sbi extends reservebank
-{
-	void bond();
-}
-class Sample implements reservebank
-{
-
-	public void money() 
-	{
-		System.out.println("Provide Loans and more services");
-		
-	}
-	public void bond()
-	{
-		System.out.println("Provide Govt bonds for particular period only");
-	}
-public static void main(String args[])
-{
-	
-	 Sample s= new Sample();
-	   s.money();
-	   s.bond();
-	
-}
+interface Bank
+{  
+float rateOfInterest();  
+}  
+class SBI implements Bank{  
+public float rateOfInterest(){return 9.15f;}  
+}  
+class PNB implements Bank{  
+public float rateOfInterest(){return 9.7f;}  
+}  
+class TestInterface2
+{  
+ public static void main(String[] args)
+ {  
+    Bank b=new SBI();  
+  System.out.println("ROI: "+b.rateOfInterest());
+ }
 }
